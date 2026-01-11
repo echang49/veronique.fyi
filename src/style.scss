@@ -367,6 +367,36 @@ body {
     }
 }
 
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    background: rgba($light, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba($dark, 0.08);
+
+    .nav-home {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+
+        img {
+            width: 32px;
+            height: 32px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            transform: scale(1.1);
+        }
+    }
+}
+
 .footer {
 	display: flex;
 	flex-direction: column;
