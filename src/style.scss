@@ -202,6 +202,14 @@ body {
 
 .case-studies-container {
     padding: 15vh 3vw!important;
+    .section-title {
+        font-family: $font-primary;
+        font-size: 2.5rem;
+        font-weight: 500;
+        margin: 0;
+        color: $dark;
+        margin-bottom: 4rem;
+    }
     .case-study-card {
         display: flex;
         flex-direction: row;

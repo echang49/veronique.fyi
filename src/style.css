@@ -172,6 +172,14 @@ body {
 .case-studies-container {
   padding: 15vh 3vw !important;
 }
+.case-studies-container .section-title {
+  font-family: "Cormorant Upright", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: #372D34;
+  margin-bottom: 4rem;
+}
 .case-studies-container .case-study-card {
   display: flex;
   flex-direction: row;
