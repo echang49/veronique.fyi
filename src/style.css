@@ -19,14 +19,14 @@ body {
 }
 
 .subtitle {
-  font-family: "Source Code Pro", monospace;
+  font-family: "DM Sans", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
   margin: 0;
 }
 
 .body-text {
-  font-family: "Source Code Pro", monospace;
+  font-family: "DM Sans", sans-serif;
   font-size: 1.25rem;
   font-weight: 300;
   margin: 0;
@@ -72,8 +72,7 @@ body {
   width: 0%;
   height: 1.35em;
   background: linear-gradient(100deg, transparent 5%, #ffe066 15%, #ffe066 85%, transparent 95%);
-  -webkit-clip-path: polygon(0% 40%, 7% 100%, 98% 92%, 100% 22%, 93% 0%, 4% 10%);
-          clip-path: polygon(0% 40%, 7% 100%, 98% 92%, 100% 22%, 93% 0%, 4% 10%);
+  clip-path: polygon(0% 40%, 7% 100%, 98% 92%, 100% 22%, 93% 0%, 4% 10%);
   opacity: 1;
   z-index: -1;
   pointer-events: none;
@@ -153,8 +152,7 @@ body {
 .about-container img {
   max-width: 100%;
   max-height: 75vh;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   display: block;
   margin: 0 auto;
 }
@@ -239,7 +237,7 @@ body {
   padding: 0.5rem 1.25rem;
   background: #A580FF;
   color: #F9F7F2;
-  font-family: "Source Code Pro", monospace;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -249,7 +247,7 @@ body {
 }
 .case-studies-container .case-study-card:hover .tag,
 .case-studies-container .case-study-card:focus-visible .tag {
-  background: #8857ff;
+  background: rgb(136.0866141732, 87.2, 255);
 }
 .case-studies-container .card-title {
   font-family: "Cormorant Upright", serif;
@@ -258,7 +256,6 @@ body {
   margin: 0;
   line-height: 1.1;
   position: relative;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .case-studies-container .card-title::after {
@@ -273,7 +270,7 @@ body {
   transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .case-studies-container .body-text {
-  font-family: "Source Code Pro", monospace;
+  font-family: "DM Sans", sans-serif;
   margin: 0;
   color: rgba(55, 45, 52, 0.75);
   max-width: 400px;
@@ -286,8 +283,7 @@ body {
 .case-studies-container .card-image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -325,7 +321,7 @@ body {
   background: rgba(165, 128, 255, 0.1);
   border: 1px solid rgba(165, 128, 255, 0.2);
   border-radius: 100px;
-  font-family: "Source Code Pro", monospace;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -354,7 +350,7 @@ body {
   background-clip: text;
 }
 .under-construction .construction-subtitle {
-  font-family: "Source Code Pro", monospace;
+  font-family: "DM Sans", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
   color: rgba(55, 45, 52, 0.6);
@@ -384,7 +380,7 @@ body {
   animation-delay: 0.2s;
 }
 .under-construction .construction-message {
-  font-family: "Source Code Pro", monospace;
+  font-family: "DM Sans", sans-serif;
   font-size: 1.1rem;
   font-weight: 300;
   line-height: 1.8;
@@ -393,7 +389,7 @@ body {
   margin: 0 0 3rem;
 }
 .under-construction .construction-link {
-  font-family: "Source Code Pro", monospace;
+  font-family: "DM Sans", sans-serif;
   font-size: 1.1rem;
   font-weight: 400;
   color: #372D34;
@@ -467,7 +463,7 @@ body {
   transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .sticky-nav .nav-home span {
-  font-family: "Source Code Pro", monospace;
+  font-family: "DM Sans", sans-serif;
   font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -488,4 +484,445 @@ body {
   padding: 5vh 3vw;
   background-color: #A580FF;
   color: #F9F7F2;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.cs-hero {
+  padding: 4rem 2rem 3.5rem;
+  background: #F9F7F2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cs-hero-title {
+  font-family: "Cormorant Upright", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+  color: #372D34;
+}
+.cs-hero-title em {
+  font-style: italic;
+}
+
+.cs-section {
+  padding: 3.5rem 2rem;
+}
+
+.cs-bg-lavender {
+  background: linear-gradient(135deg, #E5E1F5 0%, #E3F5F4 50%, #F7EBDA 100%);
+}
+
+.cs-bg-mint {
+  background-color: #E3F5F4;
+}
+
+.cs-bg-peach {
+  background-color: #F7EBDA;
+}
+
+.cs-bg-rose {
+  background-color: #F2E0E1;
+}
+
+.cs-bg-white {
+  background-color: #F9F7F2;
+}
+
+.cs-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cs-star {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: -2rem;
+  top: 0.3em;
+}
+
+.cs-heading {
+  font-family: "Cormorant Upright", serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 500;
+  margin: 0 0 1.5rem;
+  color: #372D34;
+  position: relative;
+}
+
+.cs-subheading {
+  font-family: "Cormorant Upright", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 2rem 0 0.75rem;
+  color: #372D34;
+}
+.cs-subheading:first-of-type {
+  margin-top: 0;
+}
+
+.cs-text {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(55, 45, 52, 0.85);
+  margin: 0 0 1rem;
+}
+.cs-text:last-child {
+  margin-bottom: 0;
+}
+
+.cs-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #372D34;
+  margin: 0 0 0.75rem;
+}
+
+.cs-list {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(55, 45, 52, 0.85);
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.25rem;
+}
+.cs-list li {
+  margin-bottom: 0.35rem;
+}
+.cs-list strong {
+  font-weight: 600;
+}
+
+.cs-two-col {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+@media (max-width: 600px) {
+  .cs-two-col {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.cs-stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cs-pain-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+@media (max-width: 768px) {
+  .cs-pain-points {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cs-pain-card {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1.75rem;
+  border-radius: 16px;
+  text-align: center;
+}
+.cs-pain-card h4 {
+  font-family: "Cormorant Upright", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem;
+  color: #372D34;
+}
+.cs-pain-card p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(55, 45, 52, 0.75);
+  margin: 0;
+}
+
+.cs-pain-icon {
+  font-size: 2rem;
+}
+
+.cs-purple-box {
+  background: linear-gradient(135deg, #D4CDF5 0%, #A99DE0 100%);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+}
+.cs-purple-box .cs-label {
+  color: #372D34;
+}
+.cs-purple-box .cs-list {
+  color: rgba(55, 45, 52, 0.85);
+  font-size: 1.125rem;
+}
+
+.cs-quote {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+.cs-quote p {
+  font-family: "Cormorant Upright", serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #372D34;
+  margin: 0 0 0.5rem;
+}
+.cs-quote span {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(55, 45, 52, 0.6);
+}
+
+.cs-quote-large {
+  padding: 3rem 3.5rem;
+  margin: 2.5rem 0 0;
+  text-align: center;
+}
+.cs-quote-large p {
+  font-size: 1.35rem;
+  margin: 0 0 1rem;
+}
+.cs-quote-large span {
+  font-size: 1rem;
+}
+
+.cs-quote-mint {
+  background: linear-gradient(135deg, #E3F5F4 0%, #D0EDE8 100%);
+}
+
+.cs-peach-box {
+  background: linear-gradient(135deg, #FAF0E4 0%, #F5E4D0 100%);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+}
+.cs-peach-box .cs-label {
+  color: #372D34;
+}
+.cs-peach-box .cs-list {
+  color: rgba(55, 45, 52, 0.85);
+  font-size: 1.125rem;
+}
+
+.cs-mint-box {
+  background: linear-gradient(135deg, #E8F5F4 0%, #D4EDEB 100%);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+}
+.cs-mint-box .cs-label {
+  color: #372D34;
+}
+.cs-mint-box .cs-list {
+  color: rgba(55, 45, 52, 0.85);
+  font-size: 1.125rem;
+}
+
+.cs-rose-box {
+  background: linear-gradient(135deg, #F5E4E5 0%, #E0B9BA 100%);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+}
+.cs-rose-box .cs-label {
+  color: #372D34;
+}
+.cs-rose-box .cs-list {
+  color: rgba(55, 45, 52, 0.85);
+  font-size: 1.125rem;
+}
+
+.cs-phones-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  margin: 2.5rem 0;
+}
+.cs-phones-row img {
+  width: 300px;
+  height: auto;
+  border-radius: 32px;
+  box-shadow: none;
+}
+
+.cs-wireframes {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+.cs-wireframes img {
+  max-width: 280px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(55, 45, 52, 0.1);
+}
+
+.cs-wireframes-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4rem;
+  flex-wrap: nowrap;
+}
+.cs-wireframes-row img {
+  width: 240px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: none;
+}
+@media (max-width: 1024px) {
+  .cs-wireframes-row {
+    gap: 2.5rem;
+  }
+  .cs-wireframes-row img {
+    width: 160px;
+  }
+}
+@media (max-width: 768px) {
+  .cs-wireframes-row {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .cs-wireframes-row img {
+    width: 140px;
+  }
+}
+
+.cs-wireframes-gradient {
+  background: linear-gradient(135deg, #F5E4E5 0%, #E0B9BA 100%);
+  padding: 3rem 2rem;
+  margin: 2rem -2rem 2rem -2rem;
+  width: calc(100% + 4rem);
+}
+
+.cs-personas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.cs-persona {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+.cs-persona h3 {
+  font-family: "Cormorant Upright", serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 1rem 0 0.25rem;
+  color: #372D34;
+}
+
+.cs-persona-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  background: #F7EBDA;
+}
+.cs-persona-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cs-persona-role {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #A580FF;
+  margin: 0 0 0.75rem;
+}
+
+.cs-persona-desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(55, 45, 52, 0.8);
+  margin: 0 0 0.75rem;
+}
+
+.cs-persona-goals {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(55, 45, 52, 0.7);
+  margin: 0;
+}
+
+.cs-persona-image {
+  margin-top: 2rem;
+}
+.cs-persona-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.cs-feature {
+  margin-bottom: 3rem;
+}
+.cs-feature:last-child {
+  margin-bottom: 0;
+}
+
+.cs-styleguide {
+  text-align: center;
+}
+.cs-styleguide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+@media (max-width: 1200px) {
+  .cs-phones-row img {
+    width: 220px;
+  }
+}
+@media (max-width: 1024px) {
+  .cs-phones-row img {
+    width: 180px;
+  }
+}
+@media (max-width: 768px) {
+  .cs-section {
+    padding: 3rem 1.5rem;
+  }
+  .cs-phones-row {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .cs-phones-row img {
+    width: 160px;
+  }
+}
+@media (max-width: 480px) {
+  .cs-hero {
+    padding: 2rem 1.5rem 3rem;
+  }
+  .cs-phones-row img {
+    width: 140px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
