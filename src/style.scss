@@ -35,7 +35,9 @@ body {
 .body-text {
 	font-family: $font-secondary;
 	font-size: 1.25rem;
-    font-weight: 300;
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba($dark, 0.85);
 	margin: 0
 }
 
@@ -182,8 +184,8 @@ body {
         flex: 1;
     }
     img {
-        max-width: 100%;
-        max-height: 75vh;
+        max-width: 85%;
+        max-height: 65vh;
         object-fit: contain;
         display: block;
         margin: 0 auto;
@@ -201,7 +203,7 @@ body {
 }
 
 .case-studies-container {
-    padding: 15vh 3vw!important;
+    padding: 15vh 3vw 12rem 3vw!important;
     .section-title {
         font-family: $font-primary;
         font-size: 2.5rem;
@@ -594,7 +596,28 @@ $cs-peach: #F7EBDA;       // from #EDD1AA
 $cs-rose: #F2E0E1;        // from #E0B9BA
 
 .case-study-page {
-    // Uses the default sticky-nav styles
+    overflow-x: hidden;
+    
+    // Fade in animation for sections
+    .cs-section {
+        animation: csFadeInUp 0.6s ease-out both;
+    }
+    
+    // Stagger the sections
+    .cs-section:nth-child(2) { animation-delay: 0.1s; }
+    .cs-section:nth-child(3) { animation-delay: 0.15s; }
+    .cs-section:nth-child(4) { animation-delay: 0.2s; }
+}
+
+@keyframes csFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 // Hero
@@ -612,6 +635,7 @@ $cs-rose: #F2E0E1;        // from #E0B9BA
     line-height: 1.3;
     margin: 0;
     color: $dark;
+    animation: csFadeInUp 0.8s ease-out both;
     
     em {
         font-style: italic;
@@ -621,6 +645,10 @@ $cs-rose: #F2E0E1;        // from #E0B9BA
 // Sections
 .cs-section {
     padding: 3.5rem 2rem;
+    
+    &:last-of-type {
+        padding-bottom: 12rem;
+    }
 }
 
 .cs-bg-lavender { 
@@ -774,6 +802,12 @@ $cs-rose: #F2E0E1;        // from #E0B9BA
     background: linear-gradient(135deg, #D4CDF5 0%, #A99DE0 100%);
     padding: 2rem 2.5rem;
     border-radius: 16px;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
     
     .cs-label {
         color: $dark;
@@ -791,6 +825,12 @@ $cs-rose: #F2E0E1;        // from #E0B9BA
     padding: 1.25rem 1.5rem;
     border-radius: 8px;
     margin: 1.5rem 0;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
     
     p {
         font-family: $font-primary;
@@ -831,6 +871,12 @@ $cs-rose: #F2E0E1;        // from #E0B9BA
     background: linear-gradient(135deg, #FAF0E4 0%, #F5E4D0 100%);
     padding: 2rem 2.5rem;
     border-radius: 16px;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
     
     .cs-label {
         color: $dark;
@@ -886,6 +932,11 @@ $cs-rose: #F2E0E1;        // from #E0B9BA
         height: auto;
         border-radius: 32px;
         box-shadow: none;
+        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        
+        &:hover {
+            transform: translateY(-6px) scale(1.02);
+        }
     }
 }
 
@@ -917,7 +968,7 @@ $cs-rose: #F2E0E1;        // from #E0B9BA
         width: 240px;
         height: auto;
         border-radius: 20px;
-        box-shadow: none;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
     
     @media (max-width: 1024px) {
@@ -944,6 +995,32 @@ $cs-rose: #F2E0E1;        // from #E0B9BA
     padding: 3rem 2rem;
     margin: 2rem -2rem 2rem -2rem;
     width: calc(100% + 4rem);
+}
+
+.cs-feature-images {
+    padding: 2.5rem 2rem;
+    margin: 2rem -2rem 4.5rem -2rem;
+    width: calc(100% + 4rem);
+    
+    &.cs-feature-purple {
+        background: linear-gradient(135deg, #D4CDF5 0%, #A99DE0 100%);
+    }
+    
+    &.cs-feature-peach {
+        background: linear-gradient(135deg, #FAF0E4 0%, #F5E4D0 100%);
+    }
+    
+    &.cs-feature-mint {
+        background: linear-gradient(135deg, #E8F5F4 0%, #D4EDEB 100%);
+    }
+    
+    &.cs-feature-rose {
+        background: linear-gradient(135deg, #F5E4E5 0%, #E0B9BA 100%);
+    }
+    
+    .cs-phones-row img {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
 }
 
 // Personas
@@ -1016,6 +1093,7 @@ $cs-rose: #F2E0E1;        // from #E0B9BA
         width: 100%;
         height: auto;
         border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 }
 
