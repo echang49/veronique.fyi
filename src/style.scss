@@ -5,6 +5,10 @@ $purple: #A580FF;
 $font-primary: "Cormorant Upright", serif;
 $font-secondary: "DM Sans", sans-serif;
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -15,6 +19,7 @@ body {
 	font-family: $font-primary;
 	color: $dark;
     background-color: $light;
+    overflow-x: hidden;
 }
 
 /* Utility */
@@ -180,6 +185,7 @@ body {
     display: flex;
     flex-direction: row!important;
     padding: 0 10vw 10vh 10vw !important;
+    margin-bottom: 8vh;
     div {
         flex: 1;
     }
@@ -509,6 +515,64 @@ body {
     50% {
         transform: translateY(-4px);
     }
+}
+
+// ========================================
+// Scroll-Reveal Animations
+// ========================================
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+// Reading Progress Container
+.reading-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: rgba($dark, 0.05);
+    z-index: 9999;
+}
+
+// Reading Progress Bar
+.reading-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, $purple 0%, lighten($purple, 10%) 50%, $purple 100%);
+    width: 0%;
+    transition: width 0.15s ease-out;
+    position: relative;
+    box-shadow: 0 0 12px rgba($purple, 0.4);
+
+    // Subtle shine effect
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        background: linear-gradient(180deg, rgba(white, 0.3) 0%, transparent 100%);
+    }
+}
+
+// Enhanced parallax sprites
+.sprite_1, .sprite_2, .sprite_3 {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
 }
 
 .sticky-nav {
@@ -1097,6 +1161,187 @@ $cs-rose: #F2E0E1;        // from #E0B9BA
     }
 }
 
+// Persona Card
+.persona-card {
+    background: linear-gradient(135deg, #E8E4F5 0%, #D4CDF5 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+}
+
+.persona-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.persona-avatar {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, $purple 0%, darken($purple, 10%) 100%);
+    border-radius: 50%;
+    display: flex;
+}
+
+.persona-avatar-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-primary;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.persona-info {
+    flex: 1;
+}
+
+.persona-name {
+    font-family: $font-primary;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: $dark;
+    margin: 0 0 0.25rem;
+}
+
+.persona-role {
+    font-family: $font-secondary;
+    font-size: 1rem;
+    color: rgba($dark, 0.7);
+    margin: 0;
+}
+
+.persona-details {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.persona-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.detail-label {
+    font-family: $font-secondary;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba($dark, 0.5);
+}
+
+.detail-value {
+    font-family: $font-secondary;
+    font-size: 1rem;
+    color: $dark;
+}
+
+.persona-quote {
+    background: white;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    font-family: $font-primary;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: $dark;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.persona-bio {
+    background: white;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+    
+    p {
+        font-family: $font-secondary;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: rgba($dark, 0.85);
+        margin: 0;
+        
+        &.cs-label {
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+.persona-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.persona-section {
+    background: white;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    
+    .cs-label {
+        margin-bottom: 0.5rem;
+    }
+    
+    ul {
+        margin: 0;
+        padding-left: 1.25rem;
+        
+        li {
+            font-family: $font-secondary;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: rgba($dark, 0.85);
+            margin-bottom: 0.5rem;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .persona-card {
+        padding: 1.5rem;
+    }
+    
+    .persona-avatar {
+        width: 56px;
+        height: 56px;
+        font-size: 1.25rem;
+    }
+    
+    .persona-avatar-img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .persona-name {
+        font-size: 1.5rem;
+    }
+    
+    .persona-details {
+        gap: 1.5rem;
+    }
+    
+    .persona-sections {
+        grid-template-columns: 1fr;
+    }
+    
+    .persona-quote {
+        font-size: 1rem;
+    }
+}
+
 // Features (Key Screens section)
 .cs-feature {
     margin-bottom: 3rem;
@@ -1128,88 +1373,451 @@ $cs-rose: #F2E0E1;        // from #E0B9BA
     .cs-phones-row img {
         width: 180px;
     }
+    
+    // Homepage styles for tablets like Surface Pro
+    .logo-container {
+        .logo {
+            width: 28%;
+            max-width: 320px;
+        }
+        
+        .sprite_1 {
+            width: 18%;
+        }
+        
+        .sprite_2 {
+            width: 20%;
+        }
+        
+        .sprite_3 {
+            width: 19%;
+        }
+    }
 }
 
 @media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+    }
+    
+    // Homepage mobile styles
+    .navbar {
+        nav {
+            padding: 1rem 1.5rem;
+            gap: 2rem;
+        }
+        
+        .title {
+            font-size: 1.25rem;
+            padding: 0.5rem 0;
+        }
+    }
+    
+    .logo-container {
+        .logo {
+            width: 45%;
+            max-width: 350px;
+        }
+        
+        .sprite_1 {
+            width: 35%;
+            top: 5rem;
+            left: -8vw;
+        }
+        
+        .sprite_2 {
+            width: 38%;
+            top: 5rem;
+            right: -10vw;
+        }
+        
+        .sprite_3 {
+            width: 36%;
+            bottom: 2rem;
+            right: -2vw;
+        }
+    }
+    
+    .subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .about-container {
+        flex-direction: column-reverse !important;
+        height: auto;
+        padding: 4rem 0 !important;
+        gap: 2.5rem;
+        
+        > div:first-child {
+            width: 100%;
+            
+            img {
+                max-width: 100%;
+                max-height: none;
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+        
+        > div:last-child {
+            padding: 0 1.5rem;
+        }
+        
+        .title {
+            font-size: 1.75rem;
+        }
+        
+        .body-text {
+            font-size: 1.1rem;
+        }
+    }
+    
+    .cta-container {
+        padding: 8vh 1.5rem !important;
+        
+        p {
+            font-size: 1.5rem;
+            max-width: 100%;
+        }
+    }
+    
+    .case-studies-container {
+        padding: 8vh 1.5rem 8rem 1.5rem !important;
+        
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+        }
+        
+        .body-text {
+            font-size: 1rem;
+        }
+    }
+    
+    .footer {
+        padding: 1.5rem;
+        
+        p {
+            font-size: 0.875rem;
+        }
+    }
+    
+    .case-study-page {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        width: 100%;
+    }
+    
     .cs-section {
+        padding: 3rem 1.5rem;
+        overflow: hidden;
+        max-width: 100vw;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .cs-container {
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .cs-hero {
         padding: 3rem 1.5rem;
     }
     
+    .cs-hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .cs-heading {
+        font-size: 1.5rem;
+        padding-left: 0;
+        
+        .cs-star {
+            position: static;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+    }
+    
+    .cs-text {
+        font-size: 1rem;
+    }
+    
+    .cs-label {
+        font-size: 0.9rem;
+    }
+    
     .cs-phones-row {
-        gap: 1rem;
+        flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 2rem 0;
     }
     
     .cs-phones-row img {
-        width: 160px;
+        width: calc(50% - 0.25rem);
+        max-width: none;
+        border-radius: 16px;
+        
+        &:nth-child(3):last-child {
+            width: calc(50% - 0.25rem);
+            margin-top: 0.25rem;
+        }
+    }
+    
+    .cs-purple-box,
+    .cs-peach-box,
+    .cs-mint-box,
+    .cs-rose-box {
+        padding: 1.5rem;
+    }
+    
+    .cs-quote {
+        padding: 1.5rem;
+        
+        p {
+            font-size: 1.1rem;
+        }
+    }
+    
+    .cs-quote-large {
+        padding: 1.5rem;
+        
+        .cs-quote-text {
+            font-size: 1.25rem;
+        }
+    }
+    
+    .cs-feature-images {
+        padding: 2rem 1.5rem;
+        margin: 1.5rem -1.5rem 3rem -1.5rem;
+        width: 100vw;
+        max-width: 100vw;
+        
+        .cs-phones-row {
+            gap: 1rem;
+            justify-content: center;
+            
+            img {
+                width: calc(50% - 0.5rem);
+                max-width: 200px;
+            }
+        }
+    }
+    
+    .cs-wireframes-gradient {
+        padding: 2rem 1.5rem;
+        margin: 1.5rem -1.5rem;
+        width: 100vw;
+        max-width: 100vw;
+    }
+    
+    .cs-wireframes-row {
+        gap: 1rem;
+        flex-wrap: nowrap;
+        justify-content: center;
+        
+        img {
+            width: 30%;
+            border-radius: 10px;
+        }
+    }
+    
+    .cs-persona-image img {
+        border-radius: 12px;
+    }
+    
+    .sticky-nav {
+        left: 1rem;
+        padding: 0.5rem;
+        
+        .nav-home {
+            gap: 0;
+            
+            img {
+                width: 28px;
+                height: 28px;
+            }
+            
+            span {
+                width: 0;
+                opacity: 0;
+                margin: 0;
+            }
+        }
+        
+        &:hover .nav-home span {
+            width: auto;
+            opacity: 1;
+            margin-left: 0.5rem;
+        }
     }
 }
 
 @media (max-width: 480px) {
+    // Homepage mobile styles (small screens)
+    .navbar {
+        nav {
+            padding: 0.75rem 1rem;
+            gap: 1.5rem;
+        }
+        
+        .title {
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+        }
+    }
+    
+    .logo-container {
+        .logo {
+            width: 65%;
+            max-width: 240px;
+        }
+        
+        .sprite_1 {
+            width: 40%;
+            top: 4rem;
+            left: -12vw;
+        }
+        
+        .sprite_2 {
+            width: 42%;
+            top: 4rem;
+            right: -14vw;
+        }
+        
+        .sprite_3 {
+            width: 40%;
+            bottom: 1.5rem;
+            right: -5vw;
+        }
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .about-container {
+        padding: 3rem 0 !important;
+        gap: 2rem;
+        
+        > div:last-child {
+            padding: 0 1rem;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+        }
+        
+        .body-text {
+            font-size: 1rem;
+        }
+    }
+    
+    .cta-container {
+        padding: 6vh 1rem !important;
+        
+        p {
+            font-size: 1.25rem;
+        }
+    }
+    
+    .case-studies-container {
+        padding: 6vh 1rem 6rem 1rem !important;
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 2rem;
+        }
+        
+        .body-text {
+            font-size: 0.95rem;
+        }
+        
+        .tag {
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+        }
+    }
+    
     .cs-hero {
-        padding: 2rem 1.5rem 3rem;
+        padding: 2rem 1rem 2.5rem;
+    }
+    
+    .cs-hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .cs-section {
+        padding: 2.5rem 1rem;
+        
+        &:last-of-type {
+            padding-bottom: 6rem;
+        }
+    }
+    
+    .cs-heading {
+        font-size: 1.35rem;
     }
     
     .cs-phones-row img {
-        width: 140px;
+        width: calc(50% - 0.25rem);
+        border-radius: 12px;
+    }
+    
+    .cs-wireframes-row {
+        gap: 0.75rem;
+    }
+    
+    .cs-wireframes-row img {
+        width: 30%;
+        border-radius: 8px;
+    }
+    
+    .cs-feature-images {
+        margin: 1.5rem -1rem 2.5rem -1rem;
+        width: 100vw;
+        max-width: 100vw;
+        padding: 1.5rem 1rem;
+        
+        .cs-phones-row {
+            gap: 0.75rem;
+            justify-content: center;
+            
+            img {
+                width: calc(50% - 0.375rem);
+                max-width: 180px;
+            }
+        }
+    }
+    
+    .cs-wireframes-gradient {
+        margin: 1.5rem -1rem;
+        width: 100vw;
+        max-width: 100vw;
+        padding: 1.5rem 1rem;
+    }
+    
+    .cs-list {
+        padding-left: 1.25rem;
+        
+        li {
+            font-size: 1rem;
+        }
     }
 }
-
-
-// .button {
-//     display: inline-block;
-//     padding: 1rem 2rem;
-//     background: $purple;
-//     color: $light;
-//     text-decoration: none;
-//     border-radius: 30px;
-//     font-family: $font-secondary;
-//     font-size: 1.25rem;
-//     font-weight: 300;
-//     outline: 2px solid $purple;
-//     position: relative;
-//     overflow: hidden;
-//     cursor: pointer;
-//     transition:
-//         color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-//         background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-//     &::before {
-//         display: none;
-//     }
-
-//     &::after {
-//         content: "";
-//         position: absolute;
-//         left: 50%;
-//         bottom: 0.7rem;
-//         width: 0;
-//         height: 3px;
-//         background: $purple;
-//         border-radius: 2px;
-//         opacity: 0.8;
-//         transition:
-//             width 0.36s cubic-bezier(0.7, 0.2, 0.2, 1),
-//             opacity 0.22s;
-//         transform: translateX(-50%);
-//         z-index: 1;
-//     }
-
-//     &:hover,
-//     &:focus-visible {
-//         color: $purple;
-//         background: $light;
-//         transition-duration: 0.18s, 0.18s, 0.33s;
-
-//         &::after {
-//             width: 60%;
-//             opacity: 1;
-//         }
-//     }
-// }
-
-// .button-outline {
-//     color: $dark;
-//     background-color: transparent;
-//     outline: 2px solid $dark;
-// }

@@ -8,7 +8,14 @@
 		<!-- Primary Meta Tags -->
 		<title>Dolo Case Study — Veronique Delage</title>
 		<meta name="title" property="og:title" content="Dolo Case Study" />
+		<meta name="description" content="How I designed a mobile app to help groups split expenses fairly" />
 		<meta name="author" content="Veronique Delage - Product Designer" />
+
+		<!-- Open Graph / Social Media -->
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="https://veronique.fyi/dolo.html" />
+		<meta property="og:description" content="How I designed a mobile app to help groups split expenses fairly" />
+		<meta property="og:site_name" content="Veronique Delage Portfolio" />
 
         <!-- Favicon -->
         <link rel="icon" href="assets/logo_small.svg" type="image/svg+xml" />
@@ -19,6 +26,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" href="./src/style.css" />
+		<script src="./src/animations.js" defer></script>
 	</head>
 	<body class="case-study-page">
         <header class="sticky-nav">
@@ -119,11 +127,53 @@
             <div class="cs-container">
                 <h2 class="cs-heading"><img src="assets/logo_small.svg" alt="" class="cs-star" />Persona</h2>
                 
-                <p class="cs-label">Primary User</p>
-                <p class="cs-text">University student living with roommates</p>
-
-                <div class="cs-persona-image">
-                    <img src="assets/persona.png" alt="Primary user persona" />
+                <div class="persona-card">
+                    <div class="persona-header">
+                        <img src="assets/persona-portrait.png" alt="Alex Smith" class="persona-avatar-img" />
+                        <div class="persona-info">
+                            <h3 class="persona-name">Alex Smith</h3>
+                            <p class="persona-role">University Student, 21</p>
+                        </div>
+                    </div>
+                    
+                    <div class="persona-details">
+                        <div class="persona-detail">
+                            <span class="detail-label">Living Situation</span>
+                            <span class="detail-value">Lives with 3 roommates</span>
+                        </div>
+                        <div class="persona-detail">
+                            <span class="detail-label">Tech Literacy</span>
+                            <span class="detail-value">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="persona-quote">
+                        "I just want a simple way to split expenses without having to explain everything every time."
+                    </div>
+                    
+                    <div class="persona-bio">
+                        <p class="cs-label">Bio</p>
+                        <p>Alex shares expenses daily with roommates and friends. They regularly split costs for groceries, takeout, utilities and group outings. Keeping track of who owes what often becomes confusing, especially when expenses are not split evenly.</p>
+                    </div>
+                    
+                    <div class="persona-sections">
+                        <div class="persona-section">
+                            <p class="cs-label">Core Needs</p>
+                            <ul>
+                                <li>Track shared expenses in one place</li>
+                                <li>Split costs fairly when amounts differ</li>
+                                <li>See balances clearly at any time</li>
+                            </ul>
+                        </div>
+                        <div class="persona-section">
+                            <p class="cs-label">Frustrations</p>
+                            <ul>
+                                <li>Not everyone owes the same amount</li>
+                                <li>Balances are hard to keep track of</li>
+                                <li>Existing apps feel restrictive or confusing</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
